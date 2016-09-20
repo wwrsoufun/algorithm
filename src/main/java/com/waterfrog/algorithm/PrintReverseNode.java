@@ -3,7 +3,7 @@ package com.waterfrog.algorithm;
 /**
  * Created by wangwanru on 16/9/20.
  */
-public class RevertNode {
+public class PrintReverseNode {
 
     /**
      * 在不改变原有数据结构的情况下，将一个链表从尾到头打印 递归方式
@@ -11,11 +11,11 @@ public class RevertNode {
      *
      * @param node
      */
-    public static void revert(Node node) {
+    public static void reverse(Node node) {
         if (node == null) {
             return;
         }
-        revert(node.next);
+        reverse(node.next);
         System.out.println(node.value);
     }
 
@@ -36,6 +36,6 @@ public class RevertNode {
     public static void main(String[] args) {
         Node node = new Node(1);
         node.next(new Node(2)).next(new Node(3)).next(new Node(4)).next(new Node(5));
-        revert(node);
+        reverse(node);
     }
 }
