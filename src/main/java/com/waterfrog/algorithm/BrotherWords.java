@@ -1,5 +1,6 @@
 package com.waterfrog.algorithm;
 
+import java.util.Arrays;
 import java.util.BitSet;
 
 /**
@@ -58,6 +59,25 @@ public class BrotherWords {
         return prime1 == prime2;
     }
 
+
+    public static boolean isBrotherWords3(String source1,String source2){
+        if(source1 == null && source2 == null){
+            return true;
+        }
+        if (source1 == null || source2 == null || source1.length() != source2.length()) {
+            return false;
+        }
+        char[] source1arr = source1.toCharArray();
+        char[] source2arr = source2.toCharArray();
+        Arrays.sort(source1arr);
+        Arrays.sort(source2arr);
+        for(int i = 0;i<source1arr.length;i++){
+            if(source1arr[i]!=source2arr[i]){
+                return false;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
         System.out.println(isBrotherWords("listen", "slient"));
         System.out.println(isBrotherWords2("listen", "slient"));
